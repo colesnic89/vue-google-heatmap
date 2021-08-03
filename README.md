@@ -1,31 +1,22 @@
 ## Installation
-```js
-yarn add vue-google-heatmap
+```sh
+npm install vue2-google-heatmap --save
 ```
 
-You will need an Google Maps Javascript API Key. You can get one here: [Google Cloud Console](https://console.cloud.google.com/)
+and 
 
 ```js
-import VueGoogleHeatmap from 'vue-google-heatmap';
-
-Vue.use(VueGoogleHeatmap, {
-  apiKey: API_KEY_HERE
-});
-```
-
-or if you have Google Maps API already loaded just ignore `apiKey` property
-
-```js
-import VueGoogleHeatmap from 'vue-google-heatmap';
+import VueGoogleHeatmap from 'vue2-google-heatmap';
 Vue.use(VueGoogleHeatmap);
 ```
+
+## Important
+> #### Be sure that the Google Maps API was loaded and initialised before the component
 
 ## Example
 ```vue
 <template>
-  <vue-google-heatmap :points="points"
-                      :width="400"
-                      :height="350" />
+  <vue-google-heatmap :points="points" :width="400" :height="350" />
 </template>
 
 <script>

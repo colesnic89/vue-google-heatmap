@@ -1,10 +1,8 @@
 <template>
-  <div ref="map"
-       :style="`width: ${mapWidth}; height: ${mapHeight}`"></div>
+  <div ref="map" :style="`width: ${mapWidth}; height: ${mapHeight}`"></div>
 </template>
 
 <script>
-import { loaded } from './loader';
 
 export default {
   name: 'vue-google-heatmap',
@@ -60,22 +58,20 @@ export default {
     }
   },
   created() {
-    return loaded.then(() => {
-      const mapElement = this.$refs.map;
+    const mapElement = this.$refs.map;
 
-      this.$mapObject = new google.maps.Map(mapElement, {
-        zoom: this.initialZoom,
-        center: { lat: this.lat, lng: this.lng },
-        mapTypeId: this.mapType
-      });
-
-      this.$heatmap = new google.maps.visualization.HeatmapLayer({
-        data: this.heatmapPoints,
-        map: this.$mapObject
-      });
-
-      this.$heatmap.setMap(this.$mapObject);
+    this.$mapObject = new google.maps.Map(mapElement, {
+      zoom: this.initialZoom,
+      center: { lat: this.lat, lng: this.lng },
+      mapTypeId: this.mapType
     });
+
+    this.$heatmap = new google.maps.visualization.HeatmapLayer({
+      data: this.heatmapPoints,
+      map: this.$mapObject
+    });
+
+    this.$heatmap.setMap(this.$mapObject);
   }
 };
 </script>
