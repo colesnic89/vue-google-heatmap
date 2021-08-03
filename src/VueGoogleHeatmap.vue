@@ -57,7 +57,7 @@ export default {
       );
     }
   },
-  created() {
+  mounted() {
     const mapElement = this.$refs.map;
 
     this.$mapObject = new google.maps.Map(mapElement, {
