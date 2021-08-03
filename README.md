@@ -13,6 +13,13 @@ Vue.use(VueGoogleHeatmap, {
 });
 ```
 
+or if you have Google Maps API already loaded just ignore `apiKey` property
+
+```js
+import VueGoogleHeatmap from 'vue-google-heatmap';
+Vue.use(VueGoogleHeatmap);
+```
+
 ## Example
 ```vue
 <template>
